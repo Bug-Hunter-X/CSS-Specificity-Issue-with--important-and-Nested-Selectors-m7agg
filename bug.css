@@ -1,0 +1,17 @@
+The following CSS code snippet exhibits an uncommon error related to specificity and inheritance:
+
+```css
+.parent {
+  color: blue;
+}
+
+.child {
+  color: red !important;
+}
+
+.parent .child {
+  color: green;
+}
+```
+
+In this example, the `!important` declaration in `.child` overrides the `color: blue` from `.parent` but it is overridden by `.parent .child`. This behavior is unexpected because it seems like the most specific selector should always win, but in reality the order of declaration may play a major role.
