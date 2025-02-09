@@ -1,0 +1,19 @@
+The solution involves understanding CSS specificity and using a more appropriate approach to styling. Instead of relying on `!important`, we should leverage more specific selectors and a proper structure.
+
+Here's a corrected version of the CSS:
+
+```css
+.parent {
+  color: blue;
+}
+
+.child {
+  color: red;
+}
+
+.parent .child {
+  color: green !important; /*only if this style is absolutely necessary*/
+}
+```
+
+By removing the unnecessary `!important` from `.child`, we ensure that the nested selector `.parent .child` can override it when needed with a higher specificity. The `!important` should be used only sparingly and when strictly necessary.
